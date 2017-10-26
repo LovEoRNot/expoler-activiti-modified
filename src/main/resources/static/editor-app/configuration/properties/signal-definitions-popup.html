@@ -1,0 +1,116 @@
+
+<div class="modal" ng-controller="ActivitiSignalDefinitionsPopupCtrl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close()">&times;</button>
+                <h2>{{'PROPERTY.PROPERTY.EDIT.TITLE' | translate:property}}</h2>
+            </div>
+
+            <div class="modal-body">
+            
+                <form class="form-horizontal" role="form">
+                    <div class="form-group row">
+                        <div class="col-xs-4">
+                            <h4>意见查看</h4>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="radio" style="padding-top: 0;">
+                                <label>
+                                    <input type="radio" name="option" value="cansee" ng-model="fieldAttributes.deedback"> 可以查看全部意见
+                                </label>
+                            </div>
+                            <div class="radio" style="padding-top: 0;">
+                                <label>
+                                    <input type="radio" name="option" value="nosee" ng-model="fieldAttributes[0].deedback"> 不可以查看全部意见
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xs-4">
+                            <h4>操作控制</h4>
+                        </div>
+                        <div class="col-xs-6">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="control" ng-true-value="true" ng-false-value="false" ng-model="fieldAttributes[1].attachment"> 附件
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="control" ng-true-value="true" ng-false-value="false" ng-model="fieldAttributes[1].pringting"> 打印
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="control" ng-true-value="true" ng-false-value="false" ng-model="fieldAttributes[1].ending"> 结束
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xs-4">
+                            <h4>办理期限</h4>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="number" min="0" class="form-control" ng-model="fieldAttributes[2].duration">
+                        </div>
+                        <div class="col-xs-5">
+                            <h5>小时，为0将不做限制</h5>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xs-5">
+                            <h4>办理期限（自动催办）</h4>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="number" min="0" class="form-control" ng-model="fieldAttributes[2].durationauto">
+                        </div>
+                        <div class="col-xs-4">
+                            <h5>小时，为0将不做限制</h5>
+                        </div>
+                    </div>  
+                </form>
+
+                <!-- <div class="row row-no-gutter">
+
+                	<div class="col-xs-8">
+                        <div ng-if="translationsRetrieved" class="kis-listener-grid" ng-grid="gridOptions"></div>
+            	        <div class="pull-right">
+            	            <div class="btn-group">
+            	                <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.ADD | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="addNewSignalDefinition()"><i class="glyphicon glyphicon-plus"></i></a>
+            	                <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.REMOVE | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="removeSignalDefinition()"><i class="glyphicon glyphicon-minus"></i></a>
+            	            </div>
+            	        </div>
+            		</div>
+
+                    <div class="col-xs-4" ng-show="selectedSignals && selectedSignals.length > 0">
+
+                        <div class="form-group">
+                            <label>{{'PROPERTY.SIGNALDEFINITIONS.ID' | translate}}</label>
+                            <input type="text" class="form-control" ng-model="selectedSignals[0].id">
+                        </div>
+
+                        <div class="form-group">
+                            <label>{{'PROPERTY.SIGNALDEFINITIONS.NAME' | translate}}</label>
+                            <input type="text" class="form-control" ng-model="selectedSignals[0].name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>{{'PROPERTY.SIGNALDEFINITIONS.SCOPE' | translate}}</label>
+                            <select class="form-control" ng-model="selectedSignals[0].scope">
+                                <option value="global">{{'PROPERTY.SIGNALDEFINITIONS.SCOPE-GLOBAL' | translate}}</option>
+                                <option value="processInstance">{{'PROPERTY.SIGNALDEFINITIONS.SCOPE-PROCESSINSTANCE' | translate}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+            	</div> -->
+            	
+            </div>
+
+            <div class="modal-footer">
+                <button ng-click="cancel()" class="btn btn-primary" translate>ACTION.CANCEL</button>
+                <button ng-click="save()" class="btn btn-primary" translate>ACTION.SAVE</button>
+            </div>
+
+        </div>
+    </div>
+</div>
